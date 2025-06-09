@@ -7,29 +7,103 @@
         <meta name="description" content="Looking for affordable website design in Sydney? Get professional, responsive, and SEO-ready sites at the best price.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="keywords" content="Sydney web design, small business websites, affordable websites Sydney, SEO web developer">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/main.css" media="screen and (min-width: 769px)">
+        <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
         <link rel="icon" type="image/x-icon" href="image/logo.ico">
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script src="js/main.js" defer></script>
         <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css" />
         <script src="https://unpkg.com/element-plus"></script>
         <script src="https://unpkg.com/@element-plus/icons-vue"></script>
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
         <title>Affordable Website Design for Small Businesses in Sydney</title>
     </head>
     <body>
         <div id="app">
+             <el-dialog
+                v-model="contactDetailDisplay"
+                title="Contact Details"
+                width="500">
+                <div class="contact-details">
+                    <h4 class="margin-top-20px" style="color: black">
+                        <el-icon :size="25" color="red">
+                            <Location />
+                        </el-icon>
+                        <span style="vertical-align: top; margin-left: 5px">Based in Sydney NSW</span>
+                    </h4>
+
+                    <h4 class="margin-top-20px" style="color: black">
+                        <el-icon :size="25" color="red">
+                            <Phone />
+                        </el-icon>
+                        <span style="vertical-align: top; margin-left: 5px">0450488582</span>
+                    </h4>
+
+                    <h4 class="margin-top-20px" style="color: black;">
+                        <el-icon :size="25" color="red">
+                            <Message />
+                        </el-icon>
+                        <span style="vertical-align: top; margin-left: 5px">infiniteknowledge888@gmail.com</span>
+                    </h4>
+                </div>
+                <template #footer>
+                <div class="dialog-footer">
+                    <el-button @click="contactDetailDisplay = false">Close</el-button>
+                </div>
+                </template>
+            </el-dialog>
+
+            <el-dialog
+                v-model="contactFormDisplay"
+                title="Send us your request"
+                width="500">
+                <div>
+                     <el-form :model="form" label-width="auto" style="max-width: 90%" :rules="formRules" ref="contactFormRef">
+                        <el-form-item label="Full Name" prop="name">
+                            <el-input v-model="form.name" />
+                        </el-form-item>
+
+                        <el-form-item label="Mobile" prop="mobile">
+                            <el-input v-model="form.mobile" />
+                        </el-form-item>
+
+                        <el-form-item label="Email" prop="email">
+                            <el-input v-model="form.email" />
+                        </el-form-item>
+
+                        <el-form-item label="Request" prop="message">
+                            <el-input
+                                v-model="form.message"
+                                style="width: 90%"
+                                :rows="6"
+                                type="textarea"
+                                placeholder="Please describe what you need here..."
+                            />
+                        </el-form-item>
+                     </el-form>
+                </div>
+                <template #footer>
+                <div class="dialog-footer">
+                    <el-button @click="contactFormDisplay = false">Cancel</el-button>
+                    <el-button type="primary" @click="submitContactForm()">
+                    Confirm
+                    </el-button>
+                </div>
+                </template>
+            </el-dialog>
             <div class="title-area">
                 <div class="header">
                     <div class="content-main">
                         <div class="header-buttons">
-                            <a href="" class="header-button">Contact</a>
-                            <a href="" class="header-button">Let's Talk</a>
+                            <a href="javascript:void(0)" class="header-button" @click="openContactDetail">Contact</a>
+                            <a href="javascript:void(0)" class="header-button" @click="startContactForm">Let's Talk</a>
                         </div>
                         <div class="header-links">
-                            <a href="" class="header-link">
+                            <a href="price.html" class="header-link">
                                 Prices
                             </a>
-                            <a href="" class="header-link">
+                            <a href="portfolio.html" class="header-link">
                                 Portfolio
                             </a>
                         </div>
@@ -371,6 +445,112 @@
                                     We pride ourselves on providing reliable ongoing support to ensure your web presence runs smoothly, securely, and effectively long after launch.
                                 </h3>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-project-area">
+                <div class="content-main">
+                    <h1 class="text-align-center">
+                        FEATURE PROJECTS
+                    </h1>
+                    <div class="feature-projects">
+                        <ul class="feature-projects-list">
+                            <li class="project" v-for="(item, index) in projects" :key="index">
+                                <el-image style="width: 100%; height: 100%" 
+                                :src="item.url" 
+                                :alt="item.alt"
+                                fit="scale-down" 
+                                :initial-index="index"
+                                :preview-src-list="projectPhotoList"/>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-area">
+                <div class="content-main">
+                    <div class="footer">
+                        <div class="frequenct-qa">
+                            <ul>
+                                <li>
+                                    <h3>
+                                        Q: How long does it take to build a website?
+                                    </h3>
+                                    <h3>
+                                        A: Most websites are completed in 1–3 weeks depending on size and complexity.
+                                    </h3>
+                                </li>
+
+                                <li>
+                                    <h3>
+                                        Q: Do I need to provide content and images?
+                                    </h3>
+                                    <h3>
+                                        A: Ideally yes, but we can assist with content creation or sourcing licensed images if needed.
+                                    </h3>
+                                </li>
+
+                                <li>
+                                    <h3>
+                                        Q: Do you offer ongoing support and maintenance?
+                                    </h3>
+                                    <h3>
+                                        A: Yes! We offer flexible support and maintenance plans to keep your site updated, secure, and running smoothly.
+                                    </h3>
+                                </li>
+
+                                <li>
+                                    <h3>
+                                        Q: How much does a website cost?
+                                    </h3>
+                                    <h3>
+                                        A: The cost of a website depends on its complexity and the features you need. 
+                                    </h3>
+                                </li>
+
+                                <li>
+                                    <h3>
+                                        Q: What do I need to get started?
+                                    </h3>
+                                    <h3>
+                                        A: We will start with a free consultation where we learn about your business and goals. 
+                                    </h3>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="contact-details">
+                            <h2>
+                                Let's Build your Website Together!
+                            </h2>
+                            <h3 class="margin-top-10px">
+                                Looking to get started or have questions? I'd love to hear from you.
+                            </h3>
+
+                            <h4 class="margin-top-20px">
+                                <el-icon :size="25" color="red">
+                                    <Location />
+                                </el-icon>
+                                <span style="vertical-align: top; margin-left: 5px">Based in Sydney NSW</span>
+                            </h4>
+
+                            <h4 class="margin-top-20px">
+                                <el-icon :size="25" color="red">
+                                    <Phone />
+                                </el-icon>
+                                <span style="vertical-align: top; margin-left: 5px">Phone: 0450488582</span>
+                            </h4>
+
+                            <h4 class="margin-top-20px">
+                                <el-icon :size="25" color="red">
+                                    <Message />
+                                </el-icon>
+                                <span style="vertical-align: top; margin-left: 5px">Email: infiniteknowledge888@gmail.com</span>
+                                
+                            </h4>
                         </div>
                     </div>
                 </div>

@@ -3,6 +3,10 @@ html, body, ul, li, h1, h2, h3, h4, h5, h6 {
     padding: 0;
 }
 
+body {
+    font-size: 16px;
+}
+
 div {
     box-sizing: content-box;
 }
@@ -13,6 +17,12 @@ a {
 
 li {
     list-style: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 12px;
+  }
 }
 
 .title-area {
@@ -36,6 +46,12 @@ li {
     width: 64rem;
     height: 100%;
     margin: 0 auto;
+}
+
+.header {
+    width: 100%;
+    height: 10vh;
+    background-color: #132139;
 }
 
 .title-area .header {
@@ -161,7 +177,7 @@ li {
 
 .services .service-item {
     width: 100%;
-    height: 128px;
+    height: 8rem;
     box-shadow: 0 0 10px #f2f6fe;
     border-radius: 1rem;
     margin-bottom: 1.125rem;
@@ -178,7 +194,7 @@ li {
 .process-area {
     width: 100%;
     height: auto;
-    min-height: 388px;
+    min-height: 24.25rem;
     position: relative;
     top: -5.5rem;
     background-color: #021b2d;
@@ -218,6 +234,10 @@ li {
     padding: 0 4rem;
 }
 
+.padding-top-26px {
+    padding-top: 26px;
+}
+
 .process-workflow {
     width: 100%;
     display: flex;
@@ -229,7 +249,7 @@ li {
 .workflow-item {
     position: relative;
     width: 15%;
-    height: 218px;
+    height: 13.625rem;
     padding: .75rem;
     border: 1px solid #2f4d63;
     border-radius: .625rem;
@@ -249,8 +269,8 @@ li {
     width: auto;
     height: auto;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 1.25rem;
+    right: 1.25rem;
 }
 
 .why-choose-us-area {
@@ -319,4 +339,131 @@ li {
     margin-top: 1.125rem;
     font-weight: 400;
     line-height: 2rem;
+}
+
+.feature-project-area {
+    margin-top: -5.5rem;
+    padding-bottom: 2.25rem;
+}
+
+.feature-project-area .feature-projects {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: .75rem;
+}
+
+.feature-projects .feature-projects-list {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: .75rem;
+}
+
+.feature-projects-list .project {
+    width: 32%;
+    height: 20.125rem;
+    margin-bottom: .75rem;
+    overflow: hidden;
+    border: 1px solid #dedede;
+    border-radius: .5rem;
+    background-color: #ddeadd;
+}
+
+.feature-projects-list .project img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.el-image-viewer__canvas {
+  object-fit: contain !important;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.el-image-viewer__canvas img {
+  object-fit: contain !important;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+.footer-area {
+    width: 100%;
+    height: 24.25rem;
+    background-color: #132139;
+}
+
+.footer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.375rem;
+}
+
+.footer .frequenct-qa {
+    width: 65%;
+}
+
+.footer .frequenct-qa h3 {
+    font-size: 14px;
+    color: white;
+}
+
+.footer .frequenct-qa  li {
+    margin: 18px 0;
+}
+
+.footer .contact-details {
+    width: 34%;
+}
+
+.contact-details h2 {
+    font-size: 18px;
+    color: white;
+}
+
+.contact-details h4, 
+.contact-details h3 {
+    font-size: 16px;
+    color: white;
+}
+
+.list-content-area {
+    width: 100%;
+    height: 90vh;
+    background-color: #dde9dd;
+}
+
+.portfolio-ul {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.portfolio-ul .portfolio-li {
+    width: 32%;
+    height: 15.125rem;
+    overflow: hidden;
+    border: 1px solid #dedede;
+    border-radius: .5rem;
+    margin: 1.75rem 0;
+}
+
+.backButton {
+    display: inline-block;
+    width: 88px;
+    height: 28px;
+    background-color: #409eff;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 10px;
+    color: white;
+    font-size: 12px;
 }
