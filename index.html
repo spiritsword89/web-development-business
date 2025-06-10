@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="keywords" content="Sydney web design, small business websites, affordable websites Sydney, SEO web developer">
         <link rel="stylesheet" href="css/main.css" media="screen and (min-width: 769px)">
-        <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
+        <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 768px)">
         <link rel="icon" type="image/x-icon" href="image/logo.ico">
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script src="js/main.js" defer></script>
@@ -24,7 +24,7 @@
              <el-dialog
                 v-model="contactDetailDisplay"
                 title="Contact Details"
-                width="500">
+                :width="screenWidth">
                 <div class="contact-details">
                     <h4 class="margin-top-20px" style="color: black">
                         <el-icon :size="25" color="red">
@@ -57,7 +57,7 @@
             <el-dialog
                 v-model="contactFormDisplay"
                 title="Send us your request"
-                width="500">
+                :width="screenWidth">
                 <div>
                      <el-form :model="form" label-width="auto" style="max-width: 90%" :rules="formRules" ref="contactFormRef">
                         <el-form-item label="Full Name" prop="name">
@@ -155,7 +155,7 @@
                                 "From online education platforms to e-commerce systems, social apps, dating services, and news portals, I have built digital solutions that are not only functional but tailored to meet real business needs. My clients value my ability to translate ideas into production-ready platforms with precision, clarity, and reliability."
                             </h4>
                             <h4 style="text-align:right">
-                                -- Freelancer: Justin
+                                -- IT Specialist: Justin
                             </h4>
                         </div>
 

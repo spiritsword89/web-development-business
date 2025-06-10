@@ -83,12 +83,20 @@ const app = createApp({
         mobile: '',
         email: '',
         message: ''
-      }
+      },
+
+      screenWidth: ''
     };
   },
 
   mounted() {
-     emailjs.init("5MeBJXO_EtD3TTN09");
+    const width = window.screen.width;
+    if (width <= 768) {
+      this.screenWidth = '80%'
+    } else {
+      this.screenWidth = '40%'
+    }
+    emailjs.init("5MeBJXO_EtD3TTN09");
   },
 
   methods: {

@@ -3,11 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Development Price</title>
+    <title>Web Development Price List</title>
+    <meta name="description" content="Looking for affordable website design in Sydney? Get professional, responsive, and SEO-ready sites at the best price.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Sydney web design, small business websites, affordable websites Sydney, SEO web developer">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/x-icon" href="image/logo.ico">
+    <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/element-plus"></script>
+    <script src="https://unpkg.com/@element-plus/icons-vue"></script>
+    <script src="js/price.js" defer></script>
 </head>
 <body>
-    <div>
+    <div id="app">
+        <div class="header" style="position: relative">
+            <div style="position: absolute; left: 40px; bottom: 20px">
+                  <a href="index.html" class="backButton">Back</a>
+            </div>
+            <h1 class="text-align-center stroke-text padding-top-26px ">
+                Web Development Price List
+            </h1>
+        </div>
 
+        <div class="price-list-area">
+            <div class="content-main">
+                <div class="price-list">
+                    <div class="option-items">
+                        <ul class="option-items-ul">
+                            <li class="option-item">
+                                <h4>
+                                    Pages
+                                </h4>
+                            </li>
+
+                            <li class="option-item">
+                                <h4>
+                                    Contact Form
+                                </h4>
+                            </li>
+
+                            <li class="option-item">
+                                <h4>
+                                    Domain and Host
+                                </h4>
+                            </li>
+
+                            <li class="option-item">
+                                <h4>
+                                    Mobile Support
+                                </h4>
+                            </li>
+
+                            <li class="option-item">
+                                <h4>
+                                    SEO on Page
+                                </h4>
+                            </li>
+
+                            <li class="option-item">
+                                <h4>
+                                    Style Design (Image, Banner, Icon)
+                                </h4>
+                            </li>
+
+                            
+
+                            <li class="option-item">
+                                <h4>
+                                    Maintenance and Support
+                                </h4>
+                            </li>
+
+                            <li class="option-item">
+                                <h4>
+                                    Delivery Time Guarantee
+                                </h4>
+                            </li>
+
+                            <li class="option-item" style="text-align:center; background-color:transparent">
+                                <h4>
+                                    Total
+                                </h4>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="price-item starter-package">
+                        <div class="package-header">
+                            <h5>
+                                Starter Plan
+                            </h5>
+
+                            <h3>
+                                <span style="font-size: 14px">$</span><span style="font-size: 48px">499</span>
+                            </h3>
+                            <h4>
+                                Base Rate
+                            </h4>
+                        </div>
+
+                        <div>
+                            <ul>
+                                <li class="package-item">
+                                    Single Landing Page
+                                </li>
+                                <li class="package-item">
+                                    Included
+                                </li>
+                                <li class="package-item">
+                                    Included
+                                </li>
+                                <li class="package-item check-box-item">
+                                    <el-checkbox v-model="starter.mobile" label=" + $150.00" size="large" :value="150" @change="handleStarterChange">
+                                </li>
+                                <li class="package-item check-box-item">
+                                    <el-checkbox v-model="starter.seo" label=" + $100.00" size="large" :value="100" @change="handleStarterChange"/>
+                                </li>
+                                <li class="package-item check-box-item">
+                                    <el-checkbox v-model="starter.design" label=" + $200.00" size="large" :value="200" @change="handleStarterChange"/>
+                                </li>
+                                
+                                <li class="package-item check-box-item">
+                                    <el-checkbox v-model="starter.maintenance" label=" + $50.00/Month" size="large" :value="50" @change="handleStarterChange"/>
+                                </li>
+                               
+                                <li class="package-item check-box-item">
+                                    <el-checkbox v-model="starter.delivery" label=" + $100.00/3 days" size="large" :value="100" @change="handleStarterChange"/>
+                                </li>
+    
+                                <li class="package-item">
+                                    ${{startTotal === 0 ? starter.base : startTotal}}.00
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="price-item business-package">
+                        <div class="package-header">
+                            <h5>
+                                Business Plan
+                            </h5>
+
+                            <h3>
+                                <span style="font-size: 14px">$</span><span style="font-size: 48px">999</span>
+                            </h3>
+                            <h4>
+                                Base Rate
+                            </h4>
+                        </div>
+
+                        <div>
+                            <ul>
+                                <li class="package-item">
+                                    3 Pages + $300/extra
+                                </li>
+                                <li class="package-item">
+                                    Included
+                                </li>
+                                <li class="package-item">
+                                    Included
+                                </li>
+                                <li class="package-item">
+                                    Included
+                                </li>
+                                <li class="package-item">
+                                    Included
+                                </li>
+                                <li class="package-item check-box-item">
+                                    <el-checkbox v-model="business.design" label=" + $500.00" size="large" :value="800" @change="handleBusinessChange"/>
+                                </li>
+                                
+                                <li class="package-item check-box-item">
+                                    <el-checkbox v-model="business.maintenance" label=" + $100.00/Month" size="large" :value="100" @change="handleBusinessChange"/>
+                                </li>
+                                
+                                <li class="package-item check-box-item">
+                                    <el-checkbox v-model="business.delivery" label=" + $100.00/1 week" size="large" :value="200" @change="handleBusinessChange"/>
+                                </li>
+                                <li class="package-item">
+                                    ${{businessTotal === 0 ? business.base : businessTotal}}.00
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="price-item premium-package">
+                        <div class="package-header">
+                            <h5>
+                                Premium Plan
+                            </h5>
+
+                            <h3>
+                                <span style="font-size: 14px">$</span><span style="font-size: 48px">1999</span>
+                            </h3>
+                            <h4>
+                                Base Rate
+                            </h4>
+                        </div>
+
+                        <div>
+                            <ul>
+                                <li class="package-item">
+                                    6 Pages + $300/extra
+                                </li>
+                                <li class="package-item">
+                                    Included
+                                </li>
+                                <li class="package-item">
+                                    Included
+                                </li>
+                                <li class="package-item">
+                                    Included
+                                </li>
+                                <li class="package-item">
+                                    Included
+                                </li>
+                                <li class="package-item">
+                                    Discuss
+                                </li>
+                                <li class="package-item">
+                                    <el-checkbox v-model="premium.maintenance" label=" + $100.00/Month" size="large" :value="200" @change="handlePremiumChange"/>
+                                </li>
+
+                                <li class="package-item">
+                                    <el-checkbox v-model="premium.delivery" label=" + $400.00/1 week" size="large" :value="200" @change="handlePremiumChange"/>
+                                </li>
+
+                                <li class="package-item">
+                                    ${{premiumTotal === 0 ? premium.base : premiumTotal}}.00
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 style="text-align:Center">
+                        Please note that all prices listed are estimates. We're happy to discuss your specific needs and provide a personalized quote.
+                    </h2>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
