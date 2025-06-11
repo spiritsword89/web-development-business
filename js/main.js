@@ -41,12 +41,12 @@ const app = createApp({
       contactDetailDisplay: false,
 
       projects: [
-        {url: "image/portfolio/changgou.png", alt: "Web Development E-commerce online shopping"},
-        {url: "image/portfolio/infinitus_m1.png", alt: "Web Development Online Education Tutoring"},
-        {url: "image/portfolio/infinitus_m2.png", alt: "Web Development Online Education Tutoring"},
-        {url: "image/portfolio/resource_page2.png", alt: "Web Development Online Education HSC Resource"},
-        {url: "image/portfolio/attendit_1.png", alt: "Web Development Social network"},
-        {url: "image/portfolio/attendit_2.png", alt: "Web Development Social network"}
+        {url: "image/portfolio/changgou.png", alt: "Affordable website development for small business in Sydney E-commerce online shopping"},
+        {url: "image/portfolio/infinitus_m1.png", alt: "Affordable website development for small business in Sydney Online Education Tutoring"},
+        {url: "image/portfolio/infinitus_m2.png", alt: "Affordable website development for small business in Sydney Online Education Tutoring"},
+        {url: "image/portfolio/resource_page2.png", alt: "Affordable website development for small business in Sydney Online Education HSC Resource"},
+        {url: "image/portfolio/attendit_1.png", alt: "Affordable website development for small business in Sydney Social network"},
+        {url: "image/portfolio/attendit_2.png", alt: "Affordable website development for small business in Sydney Social network"}
       ],
 
       projectPhotoList: [

@@ -5,10 +5,12 @@ html, body, ul, li, h1, h2, h3, h4, h5, h6 {
 
 body {
     font-size: 16px;
+    box-sizing: border-box;
 }
 
 div {
     box-sizing: content-box;
+    box-sizing: border-box;
 }
 
 a {
@@ -153,6 +155,12 @@ li {
     width: 46%;
 }
 
+.main-service-statement {
+    margin-top: 3.5rem;
+    line-height: 2rem;
+    font-size: 14px;
+}
+
 .developer-profile {
     width: 188px;
     height: 3.625rem;
@@ -249,7 +257,7 @@ li {
 .workflow-item {
     position: relative;
     width: 15%;
-    height: 13.625rem;
+    height: 15.625rem;
     padding: .75rem;
     border: 1px solid #2f4d63;
     border-radius: .625rem;
@@ -395,6 +403,7 @@ li {
     width: 100%;
     height: 24.25rem;
     background-color: #132139;
+    box-sizing: border-box;
 }
 
 .footer {
@@ -403,6 +412,7 @@ li {
     display: flex;
     justify-content: space-between;
     padding-top: 1.375rem;
+    box-sizing: border-box;
 }
 
 .footer .frequenct-qa {
@@ -435,7 +445,7 @@ li {
 
 .list-content-area {
     width: 100%;
-    height: 90vh;
+    height: auto;
     background-color: #dde9dd;
 }
 
